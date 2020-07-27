@@ -1,0 +1,131 @@
+
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <!--This is Vivek Kandel About Me!-->
+	<meta charset="UTF-8">
+	<title>About</title>
+  <style>
+    .align {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+    p {text-align:center;
+      color:white;
+      font-size:25px;
+    }
+ #header{
+    font-size: 2.5em; 
+    color: #ffffff;
+    background:#3F423F;
+    line-height: 120%;
+        }
+#headerRight {float:right;
+    font-size: 0.5em; 
+        }
+#headerRight input[type=text] {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+        }
+#headerRight button {
+    padding: 6px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-left: none;
+    cursor: pointer;
+}
+#headerRight button:hover {
+    background: #0b7dda;
+  
+}
+body {margin: 0;
+      padding: 0;
+      background-color:white;
+      font-family: Times, Helvetica, sans-serif;
+     }
+#typesTea{
+      background-color:green;
+          }
+#typesTea a{
+      text-decoration:none;
+      background-color:green;
+      color: white;
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      }
+#login{
+      float:right;
+       }
+#login input{
+      width: 100px;
+       }
+button {
+    background: #2196F3;
+    color: white;
+    border:2;
+    border-left: none;
+    cursor: pointer;
+    padding: 12px 15px;
+    }
+    </style>
+    <script>
+    "use static";
+var $ = function (id) {
+    return document.getElementById(id);
+}
+var checkout = function () {
+  window.location.href='checkout.html'
+}
+var signup = function () {
+  window.location.href='signup.html'
+}
+var login = function () {
+  alert("You must Sign up before Log In!")
+}
+window.onload = function () {
+     $("checkout").onclick = checkout;
+     $("log").onclick = login;
+     $("signup").onclick = signup;
+ 
+}
+    </script>
+</head>
+<body background="bgcolor.png">
+  <div id="header">
+      <a href="Final.html"><img src="http://www.public.asu.edu/~vkandel/Fall2018-IFT301/Final/Home%20Logo.png" /></a>
+    <div id="headerRight">
+      <input type="text" placeholder="Search Tea!"><button type="submit">Submit</button></input>
+    </div>
+  </div>
+  
+   <div id="typesTea">
+    <a href="Final.html">Home</a><a href="whiteTea.html">White Tea</a><a href="blackTea.html">Black Tea</a><a href="greenTea.html">Green Tea</a>
+    <div id="login">
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+      <button type="submit" id="log">Log In</button>
+      <button id="signup">Sign Up</button>
+      <button id="checkout">Checkout</button>
+    </div>
+  </div>
+  <center><h1 style="font-size:40px; color:orange">About Me!</h1></center>
+  
+  <p><b>Hello!</b> My name is Vivek Kandel and I was born in Nepal. When I was a teenager, I never liked drinking tea because it was not sweet enough. However, after years of drinking soda, juice, and alcohol, I realized that I need to try something new. I had a really hard time going to sleep on time, so I Googled different ways to go to sleep faster and I found an article from WebMD. The article name wasNatural Sleep Aids by the author called Constance Matthiessen. Throughout the article, he was talking about the health benefits of natural plants which can help us calm down and go to sleep faster. After more research, I went to Amazon and bought a chamomile tea. It definitely helped me sleep on time and I kept trying different types of tea and I realized that different tea has different health benefits so I decided to create a site on that to learn more about tea. The site design is based on e-commerce where users can buy different types of tea based on which health benefits they are looking after and how it affected other buyers from the site based on the rating and their comments on specific tea they tried.
+    <center><h1 style="font-size:40px; color:orange">Why Drink Tea!</h1></center>
+    <img src="https://i.pinimg.com/originals/61/a4/9a/61a49a59655031f425dd10201ffad640.jpg" class="align">
+    <center><cite style="color:white">-Pinterest</cite></center>
+    <center><h1 style="font-size:40px; color:orange">Thank You for visiting my site.</h1></center>
+
+
+
+</body>
+</html>

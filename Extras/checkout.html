@@ -1,0 +1,239 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!--Vivek Kandel Final-->
+<title>Checkout</title>
+  <style>
+ #header{
+    font-size: 2.5em; 
+    color: #ffffff;
+    background:#3F423F;
+    line-height: 120%;
+        }
+#headerRight {float:right;
+    font-size: 0.5em; 
+        }
+#headerRight input[type=text] {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+        }
+button {
+    padding: 6px;
+    background: #2196F3;
+    color: white;
+    font-size: 17px;
+    border: none;
+    border-left: none;
+    cursor: pointer;
+}
+#headerRight button:hover {
+    background: #0b7dda;
+  
+}
+body {margin: 0;
+      padding: 0;
+      background-color:white;
+      font-family: Times, Helvetica, sans-serif;
+     }
+#typesTea{
+      background-color:green;
+  width: 100px
+          }
+#typesTea a{
+      text-decoration:none;
+      background-color:green;
+      color: white;
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      }
+#login{
+      float:right;
+       }
+#login input{
+      width: 100px;
+       }
+button {
+    background: #2196F3;
+    color: white;
+    border:2;
+    border-color:red;
+    border-left: none;
+    cursor: pointer;
+    padding: 12px 15px;
+    }
+#featured{
+  text-align: center; 
+  top: 50%;
+  left: 50%;
+    }
+#recentItems{
+      background-color:green;
+      text-align: center; 
+      font-size: 20px;
+      height:25px;
+      color:white;
+          }
+#recentItemsTable table tr td{
+            text-align:center;
+            color:black;
+            font-weight: bold;
+            vertical-align:text-bottom;
+            padding:10px 15px;
+            }
+
+
+
+#footer {display:block;
+  color:white;
+  background-color:green;
+  width:100%;
+  text-align:center;
+  font-size: 18px;
+}
+
+a:visited {color:white;}
+a:link {color:white; text-decoration:none}
+
+#titleWhite {
+  text-decoration:none;
+      background-color:green;
+      color: white;
+      padding: 12px 15px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      width:94%
+}
+
+#productDetail table tr td{
+  padding:10px 15px;
+  font-size: 25px;
+}
+
+input[type=number]{
+    width: 30px;
+     text-align: center;
+} 
+    body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: 450px;
+    border: 3px solid green;
+      
+}
+#sales h1 {
+	color: green;
+	margin-top: 0;
+	margin-bottom: .5em;
+}
+#sales label {
+	float: left;
+    width: 6em;
+    text-align: right;
+}
+#sales input {
+    margin-left: 1em;
+    margin-bottom: .5em;
+}
+#sales span, #sales_tax,  #total {
+	color: green;
+}
+     input {
+    border: 2px solid white; 
+    box-shadow: 
+      inset 0 0 5px  rgba(0,0,0,0.1),
+            0 0 12px rgba(0,0,0,0.1); 
+    padding: 10px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+}
+label {
+
+}
+    </style>
+  <script>
+    "use strict";
+var $ = function (id) {
+    return document.getElementById(id); 
+}
+
+var calculate_click = function () {
+    var subtotal = parseFloat( $("subtotal").value );
+    var taxRate = parseFloat( $("tax_rate").value );
+    $("sales_tax").value = "";
+    $("total").value = "";
+    $("subtotal").focus();
+    if (isNaN(subtotal) || subtotal > 10000 || subtotal <= 0) {
+        alert("Subtotal must be a positive number less than $10,000");} 
+    else if (isNaN(taxRate) || taxRate > 12 || taxRate <= 0) {
+        alert("Tax Rate must be a positive number less than 12");}
+    else {
+        var salesTax = subtotal * (taxRate / 100);
+        var total = subtotal + salesTax;
+        $("sales_tax").value = salesTax.toFixed(2);
+        $("total").value = total.toFixed(2);
+    }
+	
+}
+var clear_click = function () {
+	    $("subtotal").value = "";
+	    $("tax_rate").value = "";
+      $("sales_tax").value = "";
+	    $("total").value = "";
+}
+
+window.onload = function() { 
+    $("calculate").onclick = function(){calculate_click();};
+    $("clear").onclick = function(){clear_click();};
+    $("subtotal").focus();
+}
+    </script>
+</head>
+<body>
+  
+  <div id="header">
+      <a href="Final.html"><img src="Home%20Logo.png" /></a>
+    <div id="headerRight">
+      <input type="text" placeholder="Search Tea!"><button type="submit">Submit</button></input>
+    </div>
+  </div>
+  
+  <div id="typesTea">
+  <a href="Final.html">Home</a>
+  </div>
+    <div id="titleWhite">
+      <b>Checkout</b>
+    </div>
+ <div id="sales"> 
+ <h1>Checkout:Sales Calculator</h1>
+    <section id="taxCalc">
+        <label for="subtotal">Subtotal:</label>
+        <input type="text" id="subtotal" ><br />
+
+        <label for="tax_rate">Tax Rate:</label>
+        <input type="text" id="tax_rate" ><br />
+
+        <label for="sales_tax">Sales Tax:</label>
+        <input type="text" id="sales_tax" disabled ><br />
+
+        <label for="total">Total:</label>
+        <input type="text" id="total" disabled ><br />
+
+        <label>&nbsp;</label>
+        <button id="calculate" value="Calculate" >Calculate</button>
+        <button id="clear" value="Clear" >Clear</button>
+</div><br />
+      
+  <div id="footer">
+     <a href="help.html">Help |</a><a href="contact.html"> Contact Us |</a><a href="about.html"> About Us</a>
+
+      
+</body>
+</html>
